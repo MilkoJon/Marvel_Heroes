@@ -1,0 +1,29 @@
+#cardSearch{
+    border: 5px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    background-color: rgba(206, 34, 34, 0.76);
+    height: 100%;
+    
+    >span{
+        padding-top: 5px;
+    } 
+    >img{
+        width: 80%;
+    }
+    >div{
+        padding: 10px;
+        button{
+            margin: 10px;
+            border-radius: 20px;
+            padding: 5px;
+            width: 60px;
+            background-color: cadetblue;
+        }
+    }
+
+}
