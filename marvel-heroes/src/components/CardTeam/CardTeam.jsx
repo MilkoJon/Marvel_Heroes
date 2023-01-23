@@ -1,24 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import "./CardTeam.scss"
+import React, { useEffect, useState } from "react";
+import "./CardTeam.scss";
 
-function CardTeam({data, teamMember}) {
+const CardTeam = ({ data, teamMember, teamMembers, cardId }) => {
+  useEffect(() => {
+    // console.log('teamMember');
+    // console.log(teamMember)
+  }, [{ teamMembers, teamMember }]);
 
-    // useEffect(()=>{
+  return (
+    <div id="cardTeam">
+      <div className="imgCardTeam">slika</div>
+      <div className="someHero">
+        <span>{teamMember}</span>
+        {/* <span>{data.find(({id}) => id === teamMember).name}</span> */}
+        {/* const result = inventory.find(({ name }) => name === "cherries"); */}
+      </div>
+      <button
+        onClick={() => {
+          teamMembers.splice(cardId,1);
+          console.log(cardId);
+          console.log(teamMembers);
+        }}
+      >
+        x
+      </button>
+    </div>
+  );
+};
 
-    // }, [{teamMember}])
-
-    return (
-        <div id="cardTeam">
-            <div className="imgCardTeam">
-                slika
-            </div>
-            <div className="someHero">
-            <span>{teamMember}</span>
-            {/* <span>{data.find(({id}) => id === teamMember).name}</span> */}
-            {/* const result = inventory.find(({ name }) => name === "cherries"); */}
-            </div>
-        </div>
-    )
-}
-
-export default CardTeam
+export default CardTeam;

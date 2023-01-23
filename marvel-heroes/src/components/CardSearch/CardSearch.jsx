@@ -13,12 +13,12 @@ function CardSearch({ data, teamMembers, setTeamMember }) {
       <span>{data.name}</span>
       <img src={url}></img>
       <div>
-        <button onClick>Info</button>
+        {/* <button onClick>Info</button> */}
         {/* <button onClick={()=>setTeamMember(data.name)}>Add</button> */}
         <button
           onClick={() => {
             if (teamMembers.length < numberOfTeamMembers) {
-              teamMembers.push(data.id);
+              setTeamMember(teamMembers.push(data.id));
               console.log(data.name);
               console.log(teamMembers);
             }

@@ -12,6 +12,7 @@ const PRIVATE_KEY = "78e2acb819aee564172eb090f195794d64742cb1";
 
 function MainPage() {
   const [data, setData] = useState([]);
+  const [teamMembers, setTeamMember] = useState([1,2]);
 
   useEffect(() => {
     const ts = Number(new Date());
@@ -23,10 +24,9 @@ function MainPage() {
       .then((res) => res.json())
       .then((res) => setData(res.data.results));
   }, []);
-  
+
   console.log(data);
 
-  const [teamMembers, setTeamMember] = useState([]);
 
   return (
     <div className="mainPage container-fluid">
@@ -38,8 +38,12 @@ function MainPage() {
 
           <div className="row">
             {data.map((e) => (
-              <div className="col-3 p-2">
-                <CardSearch data={e} teamMembers={teamMembers} setTeamMember={setTeamMember} />
+              <div key={e.id} className="col-3 p-2">
+                <CardSearch
+                  data={e}
+                  teamMembers={teamMembers}
+                  setTeamMember={setTeamMember}
+                />
               </div>
             ))}
           </div>
