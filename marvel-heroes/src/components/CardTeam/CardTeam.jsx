@@ -1,25 +1,34 @@
 import React, { useEffect, useState } from "react";
 import "./CardTeam.scss";
 
-const CardTeam = ({ data, teamMember, teamMembers, cardId }) => {
+const CardTeam = ({ data, teamMember, deleteTeamMember, cardId }) => {
   useEffect(() => {
-    // console.log('teamMember');
-    // console.log(teamMember)
-  }, [{ teamMembers, teamMember }]);
+    console.log("teamMember");
+    // console.log(teamMember);
+    // console.log(data);
+  }, []);
+
+  const hero = data.find(({ id }) => id === teamMember);
+  //   console.log('hero')
+  //   console.log(hero);
+
+  const url = `${hero?.thumbnail.path}.${hero?.thumbnail.extension}`;
 
   return (
     <div id="cardTeam">
-      <div className="imgCardTeam">slika</div>
+      <div className="imgCardTeam">
+        <img src={url} alt="img" />
+      </div>
       <div className="someHero">
-        <span>{teamMember}</span>
-        {/* <span>{data.find(({id}) => id === teamMember).name}</span> */}
-        {/* const result = inventory.find(({ name }) => name === "cherries"); */}
+        <span>{hero?.name}</span>
       </div>
       <button
         onClick={() => {
-          teamMembers.splice(cardId,1);
-          console.log(cardId);
-          console.log(teamMembers);
+          //   teamMembers.splice(cardId,1);
+          //   console.log(cardId);
+          //   console.log(teamMembers);
+          console.log('delete teamMemder');
+          deleteTeamMember(cardId);
         }}
       >
         x

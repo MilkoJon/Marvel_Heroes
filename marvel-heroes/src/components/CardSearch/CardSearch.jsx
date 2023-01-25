@@ -2,27 +2,31 @@ import React from "react";
 import "./CardSearch.scss";
 import { numberOfTeamMembers } from "../../constants/Constants";
 
-function CardSearch({ data, teamMembers, setTeamMember }) {
+function CardSearch({ hero, teamMembers, setTeamMembers, refresh, setRefresh, addTeamMember }) {
   // function newTeamMember(params) {
   //     console.log(newTeamMember)
   // }
 
-  const url = `${data.thumbnail.path}.${data.thumbnail.extension}`;
+  const url = `${hero.thumbnail.path}.${hero.thumbnail.extension}`;
   return (
     <div id="cardSearch">
-      <span>{data.name}</span>
+      <span>{hero.name}</span>
       <img src={url}></img>
       <div>
         {/* <button onClick>Info</button> */}
-        {/* <button onClick={()=>setTeamMember(data.name)}>Add</button> */}
+        {/* <button onClick={()=>setTeamMember(hero.name)}>Add</button> */}
         <button
           onClick={() => {
+           
             if (teamMembers.length < numberOfTeamMembers) {
-              setTeamMember(teamMembers.push(data.id));
-              console.log(data.name);
-              console.log(teamMembers);
+                console.log('onClick'+ teamMembers);
+              setTeamMembers([...teamMembers, hero.id]);
+          
+            //   setRefresh(!refresh);
+            } else {
+                console.log('reached max team members. create modal for message')
             }
-          }}
+            }}
         >
           Add
         </button>

@@ -9,15 +9,15 @@ import { Switch, Route, useHistory } from "react-router-dom";
 function App() {
   const history = useHistory();
   useEffect(() => {
-    history.push("/main-page");
+    history.push("/");
 },[]);
   return (
     <div className="app">
       <Switch>
-        <Route exact path="/main-page">
+        <Route exact path="/">
           <MainPage />
         </Route>
-        <Route exact path="/single-hero-page">
+        <Route path="/single-hero">
           <SingleHeroPage />
         </Route>
         <Route path="*">Page Not Found</Route>

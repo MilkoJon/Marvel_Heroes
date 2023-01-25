@@ -1,4 +1,4 @@
-export const numberOfTeamMembers = 6;
+export const numberOfTeamMembers = 4;
 // export const fetchMarvel = {
 //     "code": 200,
 //     "status": "Ok",
