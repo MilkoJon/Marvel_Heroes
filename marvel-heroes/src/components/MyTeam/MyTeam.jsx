@@ -12,15 +12,7 @@ const MyTeam = ({ data, teamMembers, deleteTeamMember }) => {
   return (
     <div className="myTeam container">
       <h3>My Team</h3>
-      {/* {[...Array(numberOfTeamMembers)].map((e, i) => (
-        <CardTeam
-          teamMember={teamMembers[i]}
-          teamMembers={teamMembers}
-          data={data}
-          cardId={i}
-          key={i}
-        />
-      ))} */}
+ 
           {[...Array(numberOfTeamMembers)].map((e, i) => (
         <CardTeam
           teamMember={teamMembers[i]}
@@ -32,17 +24,7 @@ const MyTeam = ({ data, teamMembers, deleteTeamMember }) => {
           deleteTeamMember={deleteTeamMember}
         />
       ))}
-      {/* {teamMembers.map((e,i) => (
-        <div className="col-11 p-2">
-          <CardTeam
-             teamMember={teamMembers[i]}
-            //  teamMembers={teamMembers}
-             data={data}
-             cardId={i}
-             key={i}
-          />
-        </div>
-      ))} */}
+
     </div>
   );
 };
