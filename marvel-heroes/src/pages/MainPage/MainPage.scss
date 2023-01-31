@@ -1,0 +1,9 @@
+.mainPage{
+    @media screen and (max-width: 992px) {
+        .myTeamDiv{
+            position: fixed;
+            bottom: 0;
+            // z-index: 11;
+        }
+    }
+}

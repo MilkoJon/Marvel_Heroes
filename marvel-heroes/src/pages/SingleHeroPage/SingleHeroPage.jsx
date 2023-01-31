@@ -30,8 +30,8 @@ function SingleHeroPage({ PUBLIC_KEY, PRIVATE_KEY }) {
 
   }, []);
 
-  console.log(singleHero);
-  console.log(comics);
+  // console.log(singleHero);
+  // console.log(comics);
 
   return (
     <div className="singleHeroPage">

@@ -8,7 +8,7 @@ function Header({ page, setPage }) {
 
   return (
     <h1 className="header col-12 m-0 p-1">
-      {page === "main" && "Marvel Hero Team"}
+      {page === "main" && "Select Your Marvel Hero Team"}
       {page === "singleHero" && "Single Hero "}
       {page === "singleHero" &&
       <button
@@ -17,7 +17,7 @@ function Header({ page, setPage }) {
         }
       }
       >
-        Main
+        Back
       </button>
       }
     </h1>

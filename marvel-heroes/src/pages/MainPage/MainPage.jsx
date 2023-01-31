@@ -6,44 +6,56 @@ import MyTeam from "../../components/MyTeam/MyTeam";
 import "./MainPage.scss";
 import { numberOfTeamMembers } from "../../constants/Constants";
 
-
-
-function MainPage({data, teamMembers, setTeamMembers, searchString, setSearchString, deleteTeamMember, refresh, setRefresh, setPage}) {
- 
-//   const search = '';
+function MainPage({
+  data,
+  teamMembers,
+  setTeamMembers,
+  teamData,
+  setTeamData,
+  search,
+  setSearch,
+  deleteTeamMember,
+  refresh,
+  setRefresh,
+  setPage,
+}) {
+  //   const search = '';
 
   return (
-    <div className="mainPage">
+    <div className="mainPage row p-0">
       {/* <div className="row"> */}
-        {/* MainPage */}
-        {/* <Header /> */}
-        <div className="cardsDiv col-8 m-0">
-          <Search
-            searchString={searchString}
-            setSearchString={setSearchString}
-            refresh = {refresh}
-            setRefresh = {setRefresh}
-          />
+      {/* MainPage */}
+      {/* <Header /> */}
+      <div className="cardsDiv col-xxl-9 col-xl-9 col-lg-8 m-0">
+        <Search
+          search={search}
+          setSearch={setSearch}
+          refresh={refresh}
+          setRefresh={setRefresh}
+        />
 
-          <div className="row">
-            {data.map((e) => (
-              <div key={e.id} className="col-3 p-2">
-                <CardSearch
-                  hero={e}
-                  teamMembers={teamMembers}
-                  setTeamMembers={setTeamMembers}
-                  setPage={setPage}
-                />
-              </div>
-            ))}
-          </div>
+        <div className="cardsDiv row">
+          {data.map((e) => (
+            <div key={e.id} className="col-xxl-3 col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6 p-2">
+              <CardSearch
+                hero={e}
+                teamMembers={teamMembers}
+                setTeamMembers={setTeamMembers}
+                teamData={teamData}
+                setTeamData={setTeamData}
+                setPage={setPage}
+              />
+            </div>
+          ))}
         </div>
-        <div className="col-4 m-0">
-          <MyTeam
-            data={data}
-            teamMembers={teamMembers}
-            deleteTeamMember={deleteTeamMember}
-          />
+      </div>
+      <div className="myTeamDiv col-xxl-3 col-xl-3 col-lg-4 m-0 p-0">
+        <MyTeam
+          data={data}
+          teamData={teamData}
+          teamMembers={teamMembers}
+          deleteTeamMember={deleteTeamMember}
+        />
         {/* </div> */}
       </div>
     </div>

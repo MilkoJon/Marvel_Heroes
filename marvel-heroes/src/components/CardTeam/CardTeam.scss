@@ -1,9 +1,10 @@
-#cardTeam{
-    display: flex;
+.myTeam>#cardTeam{
+    display: flex !important;
     border: 3px solid black;
-    margin: 12px;
+    margin-bottom: 12px;
     background-color: white;
     justify-content: space-between;
+    background-color: aquamarine;
 
     >div{
         display: flex;

@@ -1,5 +1,5 @@
 #cardSearch{
-    border: 5px solid black;
+    border: 2px solid black;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -10,18 +10,18 @@
     height: 100%;
     
     >span{
-        padding-top: 5px;
+        // padding-top: 5px;
     } 
     >img{
         width: 80%;
     }
     >div{
-        padding: 10px;
+        // padding: 10px;
         button{
-            margin: 10px;
+            margin: 5px 5px 10px 5px;
             border-radius: 20px;
-            padding: 5px;
-            width: 60px;
+            // padding: 5px;
+            width: 50px;
             background-color: cadetblue;
         }
     }

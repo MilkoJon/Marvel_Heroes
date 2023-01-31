@@ -9,7 +9,7 @@ import "./Search.scss";
 
 
 
-const Search = ({searchString, setSearchString, refresh, setRefresh}) => {
+const Search = ({search, setSearch, refresh, setRefresh}) => {
   return (
     <div id="search row m-1">
         <input
@@ -17,9 +17,9 @@ const Search = ({searchString, setSearchString, refresh, setRefresh}) => {
           placeholder=" Search..."
           name="text"
           type="text"
-          value={searchString}
+          // value={searchString}
           onChange={(e) => {
-            setSearchString(e.target.value);
+            setSearch(`&nameStartsWith=${e.target.value}`);
             // console.log('goSearch');
           }}
         />
@@ -27,7 +27,8 @@ const Search = ({searchString, setSearchString, refresh, setRefresh}) => {
         className="col-2 m-1"
           onClick={() => {
             console.log("goSearch");
-            setRefresh(!refresh)
+            setSearch(search);
+            setRefresh(!refresh);
             //   funkcija on click
           }}
         >Go</button>

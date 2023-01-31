@@ -3,7 +3,7 @@ import "./CardSearch.scss";
 import { numberOfTeamMembers } from "../../constants/Constants";
 import { Link, useHistory } from "react-router-dom";
 
-function CardSearch({ hero, teamMembers, setTeamMembers, setPage }) {
+function CardSearch({ hero, teamMembers, setTeamMembers, teamData, setTeamData, setPage }) {
   // function newTeamMember(params) {
   //     console.log(newTeamMember)
   // }
@@ -14,22 +14,24 @@ const history = useHistory();
 
   return (
     <div id="cardSearch">
-      <span>{hero.name}</span>
+      <h5>{hero.name}</h5>
       <img src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}></img>
       <div>
         {/* <Link to={`/single-hero/${hero.id}`}>
           Info
         </Link> */}
-        <button onClick={()=> history.push(`/single-hero/${hero.id}`, setPage('singleHero'))}>Info2</button>
+        <button onClick={()=> history.push(`/single-hero/${hero.id}`, setPage('singleHero'))}>Info</button>
         <button
           onClick={() => {
-            console.log("onClick" + teamMembers);
+            // console.log("onClick add team member" + teamMembers);
             if (teamMembers.length >= numberOfTeamMembers) {
               console.log("reached max team members. create modal for message");
             } else if (teamMembers.find((e) => e === hero.id)) {
               console.log("this hero is already selected in your team");
             } else {
               setTeamMembers([...teamMembers, hero.id]);
+              setTeamData([...teamData, hero])
+
             }
           }}
         >
