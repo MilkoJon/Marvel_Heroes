@@ -1,0 +1,26 @@
+.myTeamDiv{
+
+    //    @media screen and (max-width: 991px) {
+    //     .myTeamDiv{
+    //         position: fixed;
+    //         bottom: 0;
+    //         // z-index: 11;
+    //     }
+    // }
+    
+    >.myTeam{
+        background-color: black;
+        margin-top: 55px;
+        margin-left: 0;
+        padding: 10px 0 0 10px;
+        @media screen and (max-width: 991px) {
+            margin-top: 0px;
+        }
+        h3{
+            color: rgba(206, 34, 34);
+            @media screen and (max-width: 575px) {
+                font-size: 22px;
+            }
+        }
+    }
+}

@@ -7,7 +7,7 @@ function Header({ page, setPage }) {
   const history = useHistory();
 
   return (
-    <h1 className="header col-12 m-0 p-1">
+    <h1 className="header col-12 p-1">
       {page === "main" && "Select Your Marvel Hero Team"}
       {page === "singleHero" && "Single Hero "}
       {page === "singleHero" &&

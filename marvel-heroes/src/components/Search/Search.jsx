@@ -11,9 +11,9 @@ import "./Search.scss";
 
 const Search = ({search, setSearch, refresh, setRefresh}) => {
   return (
-    <div id="search row m-1">
+    <div className="search row">
         <input
-        className="col-4 m-1"
+        className="col-9 col-sm-4 col-md-4 col-lg-4 col-xl-3 m-1"
           placeholder=" Search..."
           name="text"
           type="text"
@@ -24,7 +24,7 @@ const Search = ({search, setSearch, refresh, setRefresh}) => {
           }}
         />
         <button
-        className="col-2 m-1"
+        className="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1 m-1"
           onClick={() => {
             console.log("goSearch");
             setSearch(search);

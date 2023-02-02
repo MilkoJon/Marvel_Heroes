@@ -1,9 +1,22 @@
-.mainPage{
-    @media screen and (max-width: 992px) {
-        .myTeamDiv{
-            position: fixed;
-            bottom: 0;
-            // z-index: 11;
-        }
+.app{
+    // background-image: url("https://www.panini.fr/media/catalog/product/cache/a5b5dd3adfe0d321084804c738f29601/f/m/fmo23008v_0.jpg");
+    
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mainPage {
+//   background-image: url("https://static.wikia.nocookie.net/character-level/images/5/51/Marvel_characters.jpg/revision/latest?cb=20180705041326");
+// background-color: antiquewhite;
+  .myTeamDiv {
+    position: fixed;
+    right: 20px;
+    top: 65px;
+    @media screen and (max-width: 991px) {
+      top: unset;
+      right: unset;
+      bottom: 0;
+      // z-index: 11;
     }
+  }
 }
