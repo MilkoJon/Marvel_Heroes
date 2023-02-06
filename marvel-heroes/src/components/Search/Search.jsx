@@ -24,7 +24,7 @@ const Search = ({search, setSearch, refresh, setRefresh}) => {
           }}
         />
         <button
-        className="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1 m-1"
+        className="searchBtn col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1 m-1"
           onClick={() => {
             console.log("goSearch");
             setSearch(search);

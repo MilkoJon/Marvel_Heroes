@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { useRouteMatch } from "react-router-dom";
 import md5 from "js-md5";
 import Comics from "../../components/Comics/Comics";
+import Switch from "../../components/Switch/Switch"
 
 function SingleHeroPage({ PUBLIC_KEY, PRIVATE_KEY }) {
   const [singleHero, setSingleHero] = useState([]);
   const [comics, setComics] = useState([]);
+  const [showComics, setShowComics] = useState(false)
 
   const match = useRouteMatch();
   const singleHeroID = Number(match.params.heroId); // type of (match.params) is string!!!
@@ -35,29 +37,30 @@ function SingleHeroPage({ PUBLIC_KEY, PRIVATE_KEY }) {
   return (
     <div className="singleHeroPage container">
       <div className="row justify-content-around">
-        <div className="singleHero col-xxl-3 col-xl-3 col-lg-4 col-md-5 col-sm-6">
+        <div className="singleHero col-xxl-3 col-xl-4 col-lg-4 col-md-5 col-sm-6">
           <h2>{singleHero[0]?.name}</h2>
           <img
             src={`${singleHero[0]?.thumbnail.path}.${singleHero[0]?.thumbnail.extension}`}
           ></img>
         </div>
-        <div className="about col-xxl-8 col-xl-8 col-lg-7 col-md-6 col-sm-6">
-        {!!singleHero[0]?.description === true &&<h3>About</h3>}
-        <p >{singleHero[0]?.description}</p>
-        </div>
+        {!!singleHero[0]?.description === true &&<div className="about col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-sm-6">
+        <h3>About</h3>
+        <div >{singleHero[0]?.description}</div>
+        </div>}
         <div className="switchComics">
-          <div className="switch">on/of</div>
-          <span>Show Comics</span>
+          <Switch setShowComics = {setShowComics} />
         </div>
+        {showComics && 
         <div className="comics row">
           {comics.map((e, i) => (
             <Comics
-              title={e.title}
-              img={`${e.thumbnail.path}.${e.thumbnail.extension}`}
-              key={i}
+            title={e.title}
+            img={`${e.thumbnail.path}.${e.thumbnail.extension}`}
+            key={i}
             />
-          ))}
+            ))}
         </div>
+          }
       </div>
     </div>
   );

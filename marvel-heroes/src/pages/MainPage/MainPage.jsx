@@ -19,13 +19,9 @@ function MainPage({
   setRefresh,
   setPage,
 }) {
-  //   const search = '';
-
+// const [teamName, setTeamName] = useState('My Team');
   return (
     <div className="mainPage row p-0">
-      {/* <div className="row"> */}
-      {/* MainPage */}
-      {/* <Header /> */}
       <div className="cardsDiv col-xxl-9 col-xl-9 col-lg-8 m-0">
             <Search
             search={search}
@@ -59,7 +55,6 @@ function MainPage({
           teamMembers={teamMembers}
           deleteTeamMember={deleteTeamMember}
         />
-        {/* </div> */}
       </div>
     </div>
   );

@@ -10,10 +10,17 @@
        font-size: 22px;
       }
     >button {
-        color: red($color: #000000);
-        background-color: blue($color: #000000);
         position: absolute;
         right: 10px;
-        font-size: 32px;
+        // font-size: 32px;
+        height: 80%;
+        background-color: rgba(206, 34, 34);
+        border: 2px solid grey;
+        >svg{
+            height: 80%;
+            // width: 10%;
+            position: relative;
+            bottom: 7px;
+        }
     }
 }
